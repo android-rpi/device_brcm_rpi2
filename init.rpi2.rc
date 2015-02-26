@@ -1,0 +1,56 @@
+
+on init
+    mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage/emulated 0555 root root
+
+    export EXTERNAL_STORAGE /storage/emulated/legacy
+    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+    export EMULATED_STORAGE_TARGET /storage/emulated
+
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+
+on fs
+    mount_all /fstab.rpi2
+    setprop ro.crypto.state unencrypted
+    setprop ro.crypto.fuse_sdcard true
+
+on post-fs-data
+    mkdir /data/media 0770 media_rw media_rw
+    start sdcard
+
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
+
+on early-boot
+
+    setprop sys.fb.bits 16
+
+on boot
+    setprop net.dns1 8.8.8.8
+    setprop net.dns2 8.8.4.4
+    setprop ro.build.product rpi2
+    setprop ro.product.device rpi2
+
+# fake some battery state
+    setprop status.battery.state Slow
+    setprop status.battery.level 5
+    setprop status.battery.level_raw  50
+    setprop status.battery.level_scale 9
+
+    setprop service.adb.tcp.port 5555
+    start adbd
+
+service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
+    class late_start
+
+service dhcpcd_eth0 /system/bin/dhcpcd -aABKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    class late_start
+    disabled
+    oneshot
