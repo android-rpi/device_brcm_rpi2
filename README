@@ -1,0 +1,27 @@
+# Build Kernel
+ $ cd kernel/rpi
+ $ ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg
+ $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage
+ 
+# Build Android source
+ Continue build with http://source.android.com/source/building-running.html
+ $ source build/envsetup.sh
+ $ lunch rpi2-eng
+ $ make
+
+# Prepare sd card
+ Partitions of the card should be set-up like followings.
+  p1 512MB for BOOT : Do fdisk, format as fat32
+  p2 512MB for /system : Do fdisk, new primary partition, size 512M.
+  p3 512MB for /cache  : Do fdisk, format as ext4
+  p4 remainings for /data : Do fdisk, format as ext4
+ 
+# Write system partition
+  $ cd out/target/product/rpi2
+  $ sudo dd if=system.img of=/dev/<p2> bs=1M
+  
+# Boot partition, kernel & ramdisk
+  device/brcm/rpi2/boot/* to p1:/
+  kernel/rpi/arch/arm/boot/zImage to p1:/
+  out/target/product/rpi2/ramdisk.img to p1:/
+
