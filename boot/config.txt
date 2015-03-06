@@ -5,6 +5,6 @@ disable_overscan=1
 framebuffer_width=1280
 framebuffer_height=720
 kernel=zImage
-initramfs ramdisk.img 0x00f00000
+initramfs ramdisk.img 0x01f00000
 mask_gpu_interrupt0=0x400
 
