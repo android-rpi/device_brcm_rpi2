@@ -5,6 +5,7 @@ disable_overscan=1
 framebuffer_width=1280
 framebuffer_height=720
 kernel=zImage
+device_tree=bcm2709-rpi-2-b.dtb
 initramfs ramdisk.img 0x01f00000
 mask_gpu_interrupt0=0x400
 
