@@ -12,7 +12,7 @@
 
 # Prepare sd card
  Partitions of the card should be set-up like followings.
-  p1 512MB for BOOT : Do fdisk, format as fat32
+  p1 512MB for BOOT : Do fdisk, format as fat32, tag bootable flag
   p2 512MB for /system : Do fdisk, new primary partition, size 512M.
   p3 512MB for /cache  : Do fdisk, format as ext4
   p4 remainings for /data : Do fdisk, format as ext4
