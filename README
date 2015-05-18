@@ -24,6 +24,6 @@
 # Boot partition, kernel & ramdisk
   device/brcm/rpi2/boot/* to p1:/
   kernel/rpi/arch/arm/boot/zImage to p1:/
-  kernel/rpi/arch/arm/boot/dts/bcm2709-rpi2-b.dtb to p1:/
+  kernel/rpi/arch/arm/boot/dts/bcm2709-rpi-2-b.dtb to p1:/
   out/target/product/rpi2/ramdisk.img to p1:/
 
