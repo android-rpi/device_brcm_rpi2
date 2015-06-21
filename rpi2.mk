@@ -26,6 +26,7 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/init.rpi2.rc:root/init.rpi2.rc \
     $(LOCAL_PATH)/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/fstab.rpi2:root/fstab.rpi2 \
+    $(LOCAL_PATH)/Generic.kl:system/usr/keylayout/Generic.kl \
     $(PRODUCT_COPY_FILES)
 
 DEVICE_PACKAGE_OVERLAYS := device/brcm/rpi2/overlay
