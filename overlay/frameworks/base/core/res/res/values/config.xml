@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Flag indicating that the media framework should allow changing
-         master volume stream and nothing else . -->
-    <bool name="config_useMasterVolume">true</bool>
-
     <!-- Flag indicating that the media framework should support playing of sounds on volume
          key usage.  This adds noticeable additional overhead to volume key processing, so
          is disableable for products for which it is irrelevant. -->
@@ -49,8 +45,5 @@
     <string-array translatable="false" name="radioAttributes">
         <item>"9,1"</item>
     </string-array>
-
-    <!-- Apps that are authorized to access shared accounts -->
-    <string name="config_appsAuthorizedForSharedAccounts">;com.android.tv.settings;</string>
 
 </resources>

@@ -1,20 +1,14 @@
 
 on init
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage/emulated 0555 root root
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
 
 on fs
     mount_all /fstab.rpi2
-    setprop ro.crypto.state unencrypted
-    setprop ro.crypto.fuse_sdcard true
 
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
@@ -41,9 +35,6 @@ on boot
 
     setprop service.adb.tcp.port 5555
     start adbd
-
-service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
-    class late_start
 
 service dhcpcd_eth0 /system/bin/dhcpcd -aABKL
     class main

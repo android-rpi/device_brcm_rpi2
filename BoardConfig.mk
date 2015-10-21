@@ -35,3 +35,6 @@ USE_OPENGL_RENDERER := true
 TARGET_USE_PAN_DISPLAY := true
 
 USE_CAMERA_STUB := true
+
+BOARD_SEPOLICY_DIRS := \
+    device/brcm/rpi2/sepolicy

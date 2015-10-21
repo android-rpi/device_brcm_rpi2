@@ -1,0 +1,2 @@
+allow bootanim ashmem_device:chr_file execute;
+allow bootanim self:process execmem;
