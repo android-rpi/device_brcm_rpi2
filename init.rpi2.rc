@@ -12,14 +12,9 @@ on fs
 
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
-    start sdcard
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
-
-on early-boot
-
-    setprop sys.fb.bits 16
 
 on boot
     setprop net.dns1 8.8.8.8
