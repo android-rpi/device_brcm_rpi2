@@ -5,7 +5,7 @@
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
  
 # Build Android source
- Continue build with http://source.android.com/source/building-running.html
+ Continue build with http://source.android.com/source/building.html
  $ source build/envsetup.sh
  $ lunch rpi2-eng
  $ make
