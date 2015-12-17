@@ -33,4 +33,4 @@
   same issue to https://code.google.com/p/android/issues/detail?id=189040
 
 # Graphics HAL for VC4 GPU (Experimental)
-  See https://github.com/peyo-hd/device_brcm_rpi2/wiki#how-to-use-vc4-drmmesa-driver
+  See https://github.com/peyo-hd/device_brcm_rpi2/wiki/VC4-GPU-Build
