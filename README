@@ -26,6 +26,3 @@
   kernel/rpi/arch/arm/boot/zImage to p1:/
   kernel/rpi/arch/arm/boot/dts/bcm2709-rpi-2-b.dtb to p1:/
   out/target/product/rpi2/ramdisk.img to p1:/
-
-# Graphics HAL for VC4 GPU (Experimental)
-  See https://github.com/peyo-hd/device_brcm_rpi2/wiki#how-to-use-vc4-drmmesa-driver
