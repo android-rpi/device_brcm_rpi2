@@ -3,6 +3,9 @@
  $ ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
+
+# Patch frameworks/base
+  Do https://github.com/peyo-hd/device_brcm_rpi2/wiki#avoid-logcat-flood
  
 # Build Android source
  Continue build with http://source.android.com/source/building.html
@@ -28,6 +31,3 @@
   kernel/rpi/arch/arm/boot/zImage to p1:/
   kernel/rpi/arch/arm/boot/dts/bcm2709-rpi-2-b.dtb to p1:/
   out/target/product/rpi2/ramdisk.img to p1:/
-
-# Graphics HAL for VC4 GPU (Experimental)
-  See https://github.com/peyo-hd/device_brcm_rpi2/wiki/VC4-GPU-Build

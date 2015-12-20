@@ -1,4 +1,4 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, device/google/atv/products/atv_base.mk)
 
 PRODUCT_NAME := rpi2
 PRODUCT_DEVICE := rpi2
@@ -14,7 +14,10 @@ include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 PRODUCT_PACKAGES += \
     libGLES_mesa \
     gralloc.$(TARGET_PRODUCT) \
-    hwcomposer.$(TARGET_PRODUCT)
+    hwcomposer.$(TARGET_PRODUCT) \
+    Launcher2 \
+    Settings \
+    Browser
 
 PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
