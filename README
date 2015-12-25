@@ -1,3 +1,5 @@
+Read it first : https://github.com/peyo-hd/local_manifests
+
 # Build Kernel
  $ cd kernel/rpi
  $ ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg
