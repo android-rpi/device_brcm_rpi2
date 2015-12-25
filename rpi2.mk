@@ -15,6 +15,7 @@ PRODUCT_PACKAGES += \
     libGLES_mesa \
     gralloc.$(TARGET_PRODUCT) \
     hwcomposer.$(TARGET_PRODUCT) \
+    audio.primary.$(TARGET_PRODUCT) \
     Launcher2 \
     Settings \
     Browser
@@ -31,6 +32,7 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/init.rpi2.rc:root/init.rpi2.rc \
     $(LOCAL_PATH)/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/fstab.rpi2:root/fstab.rpi2 \
+    $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/Generic.kl:system/usr/keylayout/Generic.kl \
     $(PRODUCT_COPY_FILES)
 
