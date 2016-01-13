@@ -17,6 +17,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.$(TARGET_PRODUCT) \
     audio.primary.$(TARGET_PRODUCT) \
     Launcher2 \
+    LeanbackLauncher \
     Settings \
     Browser
 
