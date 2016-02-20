@@ -6,6 +6,7 @@ Read it first : https://github.com/peyo-hd/local_manifests
  $ ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig android/configs/android-base.cfg android/configs/android-recommended.cfg
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
+ $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make modules SUBDIRS=../hardware/wifi/realtek/drivers/8192cu/rtl8xxx_CU
 
 # Install python mako module
   sudo apt-get install python-mako

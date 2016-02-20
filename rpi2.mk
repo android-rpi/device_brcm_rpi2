@@ -17,6 +17,8 @@ PRODUCT_PACKAGES += \
     gralloc.$(TARGET_PRODUCT) \
     hwcomposer.$(TARGET_PRODUCT) \
     audio.primary.$(TARGET_PRODUCT) \
+    wpa_supplicant \
+    wpa_supplicant.conf \
     Launcher2 \
     LeanbackLauncher \
     Settings \
@@ -25,6 +27,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     device/generic/goldfish/camera/media_profiles.xml:system/etc/media_profiles.xml \
     device/generic/goldfish/camera/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -36,6 +39,8 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/fstab.rpi2:root/fstab.rpi2 \
     $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/Generic.kl:system/usr/keylayout/Generic.kl \
+    kernel/hardware/wifi/realtek/drivers/8192cu/rtl8xxx_CU/8192cu.ko:root/lib/modules/8192cu.ko \
+    hardware/rpi/wifi/rtl8192cu/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(PRODUCT_COPY_FILES)
 
 DEVICE_PACKAGE_OVERLAYS := device/brcm/rpi2/overlay
