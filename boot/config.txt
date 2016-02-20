@@ -11,4 +11,5 @@ device_tree=bcm2709-rpi-2-b.dtb
 initramfs ramdisk.img 0x01f00000
 mask_gpu_interrupt0=0x400
 avoid_warnings=2
-
+arm_freq=900
+force_turbo=1
