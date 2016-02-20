@@ -7,6 +7,9 @@ Read it first : https://github.com/peyo-hd/local_manifests
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage
  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
 
+# Install python mako module
+  sudo apt-get install python-mako
+
 # Patch frameworks/base
   Do https://github.com/peyo-hd/device_brcm_rpi2/wiki#avoid-logcat-flood
  
