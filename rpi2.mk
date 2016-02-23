@@ -17,6 +17,8 @@ PRODUCT_PACKAGES += \
     gralloc.$(TARGET_PRODUCT) \
     hwcomposer.$(TARGET_PRODUCT) \
     audio.primary.$(TARGET_PRODUCT) \
+    bluetooth.default \
+    hciconfig \
     wpa_supplicant \
     wpa_supplicant.conf \
     Launcher2 \
@@ -28,6 +30,8 @@ PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     device/generic/goldfish/camera/media_profiles.xml:system/etc/media_profiles.xml \
     device/generic/goldfish/camera/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -36,6 +40,7 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/rpi2_core_hardware.xml:system/etc/permissions/rpi2_core_hardware.xml \
     $(LOCAL_PATH)/init.rpi2.rc:root/init.rpi2.rc \
     $(LOCAL_PATH)/init.usb.rc:root/init.usb.rc \
+    $(LOCAL_PATH)/ueventd.rpi2.rc:root/ueventd.rpi2.rc \
     $(LOCAL_PATH)/fstab.rpi2:root/fstab.rpi2 \
     $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/Generic.kl:system/usr/keylayout/Generic.kl \
